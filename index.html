@@ -1,0 +1,132 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EduAI – Modern AI-Powered Student Learning Platform featuring personalized study planning, 24/7 AI tutoring, smart quiz generator, notes summarizer, and progress analytics.">
+  <meta name="theme-color" content="#0D0D1A">
+  <title>EduAI – Learn Smarter with Your AI Tutor</title>
+
+  <!-- Favicon / Brand Icon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+
+  <!-- Google Fonts: Inter, Poppins, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./css/variables.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/components.css">
+</head>
+<body>
+  <div id="app-wrapper">
+    <!-- SIDEBAR -->
+    <aside id="sidebar">
+      <a href="#/home" class="sidebar-logo">
+        <div class="logo-icon">
+          <i class="fas fa-brain"></i>
+        </div>
+        <div class="logo-text">Edu<span>AI</span></div>
+      </a>
+
+      <nav>
+        <ul>
+          <li class="nav-section-label">Main Menu</li>
+          <li class="nav-item active" data-route="home">
+            <i class="fas fa-home nav-icon"></i>
+            <span class="nav-label">Home</span>
+          </li>
+          <li class="nav-item" data-route="dashboard">
+            <i class="fas fa-th-large nav-icon"></i>
+            <span class="nav-label">Dashboard</span>
+          </li>
+
+          <li class="nav-section-label">Learning Tools</li>
+          <li class="nav-item" data-route="ai-tutor">
+            <i class="fas fa-robot nav-icon"></i>
+            <span class="nav-label">AI Tutor</span>
+            <span class="nav-badge">AI</span>
+          </li>
+          <li class="nav-item" data-route="study-planner">
+            <i class="fas fa-calendar-alt nav-icon"></i>
+            <span class="nav-label">Study Planner</span>
+          </li>
+          <li class="nav-item" data-route="notes-summarizer">
+            <i class="fas fa-file-alt nav-icon"></i>
+            <span class="nav-label">Notes Summarizer</span>
+          </li>
+          <li class="nav-item" data-route="quiz">
+            <i class="fas fa-question-circle nav-icon"></i>
+            <span class="nav-label">Quiz Generator</span>
+            <span class="nav-badge">NEW</span>
+          </li>
+          <li class="nav-item" data-route="progress">
+            <i class="fas fa-chart-line nav-icon"></i>
+            <span class="nav-label">Progress Tracker</span>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-user" title="View Student Profile">
+          <div class="sidebar-avatar">AS</div>
+          <div class="sidebar-user-info">
+            <div class="user-name">Alex Student</div>
+            <div class="user-role">Grade 10 · CBSE</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MOBILE SIDEBAR BACKDROP -->
+    <div id="sidebar-overlay"></div>
+
+    <!-- MAIN WRAPPER -->
+    <div style="display:flex; flex-direction:column; flex:1; min-width:0;">
+      <!-- TOPBAR -->
+      <header id="topbar">
+        <button id="hamburger" class="topbar-btn" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <div id="topbar-page-title">Home</div>
+
+        <div class="topbar-search">
+          <i class="fas fa-search"></i>
+          <input type="text" id="globalSearchInput" placeholder="Search topics, subjects, tools (press Enter)...">
+        </div>
+
+        <div class="topbar-actions">
+          <button class="topbar-btn topbar-notif" id="btn-notif" title="Study Tips & Notifications">
+            <i class="fas fa-bell"></i>
+          </button>
+          <button class="topbar-btn" id="btn-streak" title="Daily Study Streak">
+            <i class="fas fa-fire" style="color:var(--accent)"></i>
+          </button>
+          <button class="topbar-btn" id="btn-profile" title="Student Profile" onclick="navigateTo('dashboard')">
+            <i class="fas fa-user"></i>
+          </button>
+        </div>
+      </header>
+
+      <!-- MAIN CONTENT OUTLET -->
+      <main id="main-content">
+        <div id="page-container">
+          <!-- Dynamic SPA view loaded here -->
+        </div>
+      </main>
+    </div>
+
+    <!-- TOAST NOTIFICATION OUTLET -->
+    <div id="toast-container"></div>
+  </div>
+
+  <!-- APPLICATION SCRIPT (ES Module) -->
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
